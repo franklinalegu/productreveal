@@ -230,7 +230,7 @@ function App() {
         <section className="hero section-pad" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-dot"></span>AI CREATIVE TRAINING / 001</div>
-            <h1><span className="title-line">Turn one photo</span><br /><span className="title-line">into a product ad.</span></h1>
+            <h1><span className="title-line">Turn one photo</span><br /><span className="title-line">into a product</span><br /><span className="title-line">ad.</span></h1>
             <p className="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div className="hero-actions">
               <button className="button button-primary" onClick={openRegistration}>Join the masterclass <ArrowUpRight size={18} /></button>
