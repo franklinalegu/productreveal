@@ -230,7 +230,7 @@ function App() {
         <section className="hero section-pad" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-dot"></span>AI CREATIVE TRAINING / 001</div>
-            <h1>Turn one<br /><span className="lime-text">photo</span><br />into a product ad<span className="period">.</span></h1>
+            <h1>Turn one <span className="lime-text">photo</span><br />into a product ad<span className="period">.</span></h1>
             <p className="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div className="hero-actions">
               <button className="button button-primary" onClick={openRegistration}>Join the masterclass <ArrowUpRight size={18} /></button>
@@ -295,7 +295,7 @@ function App() {
         <section className="brief-section section-pad" id="brief">
           <div className="section-label"><span>01</span><span>THE BRIEF</span></div>
           <div className="brief-grid">
-            <h2>A product photo<br /><span>is only</span><br />the <em>beginning.</em></h2>
+            <h2>A product photo<br /><span>is only the beginning.</span></h2>
             <div className="brief-copy">
               <p className="lead-copy">Your product photo is only the starting point. In this masterclass, you will turn one still image into a cinematic reveal with a clear story, intentional motion and a finish that feels ready for the feed.</p>
               <p>You will learn how to connect ChatGPT, Promptor, Google Flow and AI Auto Fill in sequence. Shape the idea, write the message, map the frames, animate the reveal and export an asset for social, ecommerce, paid campaigns or client work.</p>
@@ -364,7 +364,7 @@ function App() {
         <section className="audience-section section-pad" id="audience">
           <div className="audience-intro">
             <div className="section-label section-label-dark"><span>04</span><span>WHO IT'S FOR</span></div>
-            <h2>For creatives<br /><em>ready</em> to make<br />more.</h2>
+            <h2>For creatives ready<br /><em>to make more.</em></h2>
           </div>
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
