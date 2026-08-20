@@ -295,7 +295,7 @@ function App() {
         <section className="brief-section section-pad" id="brief">
           <div className="section-label"><span>01</span><span>THE BRIEF</span></div>
           <div className="brief-grid">
-            <h2>One photo<br /><span>is not</span><br />the whole <em>story.</em></h2>
+            <h2>A product photo<br /><span>is only</span><br />the <em>beginning.</em></h2>
             <div className="brief-copy">
               <p className="lead-copy">Your product photo is only the starting point. In this masterclass, you will turn one still image into a cinematic reveal with a clear story, intentional motion and a finish that feels ready for the feed.</p>
               <p>You will learn how to connect ChatGPT, Promptor, Google Flow and AI Auto Fill in sequence. Shape the idea, write the message, map the frames, animate the reveal and export an asset for social, ecommerce, paid campaigns or client work.</p>
@@ -309,7 +309,7 @@ function App() {
           <div className="section-heading-row">
             <div>
               <div className="section-label"><span>02</span><span>THE MASTERCLASS</span></div>
-              <h2>Two sessions.<br /><span>One repeatable</span> loop.</h2>
+              <h2>Build the idea.<br /><span>Animate the</span> reveal.</h2>
             </div>
             <p className="heading-aside">You will leave with more than prompts. You will leave with a repeatable way to move from brief to storyboard to finished reveal without losing the idea along the way.</p>
           </div>
@@ -348,7 +348,7 @@ function App() {
           <div className="section-label"><span>03</span><span>THE WORKFLOW</span></div>
           <div className="workflow-grid">
             <div className="workflow-copy">
-              <h2>From product <span>photo</span> to product reveal.</h2>
+              <h2>From still image<br />to <span>moving story.</span></h2>
               <p>The magic is not one perfect prompt. It is the sequence. Learn a simple creative system you can repeat across products, platforms and client briefs.</p>
               <div className="code-note"><span className="code-dot code-dot--red"></span><span className="code-dot code-dot--yellow"></span><span className="code-dot code-dot--green"></span><code>/product-reveal /v01</code></div>
             </div>
@@ -364,7 +364,7 @@ function App() {
         <section className="audience-section section-pad" id="audience">
           <div className="audience-intro">
             <div className="section-label section-label-dark"><span>04</span><span>WHO IT'S FOR</span></div>
-            <h2>For creatives<br /><em>ready</em> to work<br />with intention.</h2>
+            <h2>For creatives<br /><em>ready</em> to make<br />more.</h2>
           </div>
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
@@ -377,7 +377,7 @@ function App() {
           <div className="testimonials-heading-row">
             <div>
               <div className="section-label testimonials-label"><span>05</span><span>IN THEIR WORDS</span></div>
-              <h2>Good work<br /><span>travels.</span></h2>
+              <h2>See what a<br /><span>system changes.</span></h2>
             </div>
             <div className="testimonials-intro"><span className="testimonials-mark">“</span><p>See what changes when the tools, the thinking and the workflow finally work together.</p><span className="testimonials-note">PARTICIPANT FEEDBACK / NIGERIA + EUROPE</span></div>
           </div>
@@ -406,7 +406,7 @@ function App() {
         </section>
 
         <section className="benefits-section section-pad">
-          <div className="benefit-copy"><div className="section-label"><span>06</span><span>THE PAYOFF</span></div><h2>Less production drag.<br /><span>More creative range.</span></h2></div>
+          <div className="benefit-copy"><div className="section-label"><span>06</span><span>THE PAYOFF</span></div><h2>Create faster.<br /><span>Deliver more.</span></h2></div>
           <div className="benefit-list">
             <div className="benefit-item"><span className="benefit-icon"><Check /></span><div><strong>Reduce production costs</strong><p>Produce stronger product assets without starting with a full production crew.</p></div></div>
             <div className="benefit-item"><span className="benefit-icon"><Check /></span><div><strong>Create content faster</strong><p>Turn one product photo into multiple creative directions in a focused workflow.</p></div></div>
@@ -432,7 +432,7 @@ function App() {
         </section>
 
         <section className="faq-section section-pad" id="faqs">
-          <div className="faq-heading"><div className="section-label"><span>08</span><span>GOOD TO KNOW</span></div><h2>Questions,<br /><span>answered.</span></h2></div>
+          <div className="faq-heading"><div className="section-label"><span>08</span><span>GOOD TO KNOW</span></div><h2>Everything you<br /><span>need to know.</span></h2></div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
               <div className={openFaq === index ? 'faq-item is-open' : 'faq-item'} key={faq.question}>
