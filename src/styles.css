@@ -575,3 +575,9 @@ a.play-button { text-decoration: none; }
 .offer-details h2 span,
 .faq-heading h2 span,
 .session-card h3 span { color: inherit; }
+
+/* Keep every main title to two intentional lines. */
+.title-line { display: inline-block; white-space: nowrap; }
+@media (max-width: 520px) {
+  .title-line { white-space: normal; }
+}

@@ -230,7 +230,7 @@ function App() {
         <section className="hero section-pad" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-dot"></span>AI CREATIVE TRAINING / 001</div>
-            <h1>Turn one <span className="lime-text">photo</span><br />into a product ad<span className="period">.</span></h1>
+            <h1><span className="title-line">Turn one photo</span><br /><span className="title-line">into a product ad.</span></h1>
             <p className="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div className="hero-actions">
               <button className="button button-primary" onClick={openRegistration}>Join the masterclass <ArrowUpRight size={18} /></button>
@@ -295,7 +295,7 @@ function App() {
         <section className="brief-section section-pad" id="brief">
           <div className="section-label"><span>01</span><span>THE BRIEF</span></div>
           <div className="brief-grid">
-            <h2>A product photo<br /><span>is only the beginning.</span></h2>
+            <h2><span class="title-line">A product photo</span><br /><span class="title-line">is only the beginning.</span></h2>
             <div className="brief-copy">
               <p className="lead-copy">Your product photo is only the starting point. In this masterclass, you will turn one still image into a cinematic reveal with a clear story, intentional motion and a finish that feels ready for the feed.</p>
               <p>You will learn how to connect ChatGPT, Promptor, Google Flow and AI Auto Fill in sequence. Shape the idea, write the message, map the frames, animate the reveal and export an asset for social, ecommerce, paid campaigns or client work.</p>
@@ -309,7 +309,7 @@ function App() {
           <div className="section-heading-row">
             <div>
               <div className="section-label"><span>02</span><span>THE MASTERCLASS</span></div>
-              <h2>Build the idea.<br /><span>Animate the</span> reveal.</h2>
+              <h2><span class="title-line">Build the idea.</span><br /><span class="title-line">Animate the reveal.</span></h2>
             </div>
             <p className="heading-aside">You will leave with more than prompts. You will leave with a repeatable way to move from brief to storyboard to finished reveal without losing the idea along the way.</p>
           </div>
@@ -318,7 +318,7 @@ function App() {
             <article className="session-card session-card-dark">
               <div className="card-top"><span className="card-number">01</span><span className="card-tag">THINK / WRITE</span></div>
               <div className="session-icon session-icon--orange"><Spark size={18} /></div>
-              <h3>Build the<br /><span>creative direction.</span></h3>
+              <h3><span className="title-line">Build the</span><br /><span className="title-line">creative direction.</span></h3>
               <p>Build the thinking behind the ad. Turn a product benefit into a concept, script and storyboard that gives every frame a job.</p>
               <ul className="session-list">
                 <li><span>01</span>Product advertising strategy</li>
@@ -330,7 +330,7 @@ function App() {
             <article className="session-card session-card-lime">
               <div className="card-top"><span className="card-number">02</span><span className="card-tag">MAKE / MOVE</span></div>
               <div className="session-icon session-icon--blue"><span className="session-play-triangle"></span></div>
-              <h3>Bring the<br /><span>product to life.</span></h3>
+              <h3><span className="title-line">Bring the</span><br /><span className="title-line">product to life.</span></h3>
               <p>Bring the storyboard to life in Google Flow, refine the product reveal and export a polished asset you can adapt for your next brief.</p>
               <ul className="session-list">
                 <li><span>01</span>Google Flow animation</li>
@@ -341,14 +341,14 @@ function App() {
             </article>
           </div>
           <div className="tool-line"><span>THE TOOLKIT</span><span className="tool-chip">CHATGPT</span><span className="tool-chip">PROMPTOR</span><span className="tool-chip">GOOGLE FLOW</span><span className="tool-chip">AI AUTO FILL</span></div>
-          <div className="takeaway-panel"><div className="takeaway-heading"><span>WHAT YOU LEAVE WITH</span><h3>A clear path from product photo to product ad.</h3></div><div className="takeaway-grid"><div><span>01</span><strong>A product concept</strong><p>A sharper idea grounded in the product promise and audience.</p></div><div><span>02</span><strong>A storyboard</strong><p>A sequence of frames that gives the animation direction.</p></div><div><span>03</span><strong>A reveal workflow</strong><p>A repeatable process you can adapt to your next brief.</p></div><div><span>04</span><strong>A stronger offer</strong><p>A practical way to add AI product advertising to your services.</p></div></div></div>
+          <div className="takeaway-panel"><div className="takeaway-heading"><span>WHAT YOU LEAVE WITH</span><h3><span className="title-line">A clear path from product</span><br /><span className="title-line">photo to product ad.</span></h3></div><div className="takeaway-grid"><div><span>01</span><strong>A product concept</strong><p>A sharper idea grounded in the product promise and audience.</p></div><div><span>02</span><strong>A storyboard</strong><p>A sequence of frames that gives the animation direction.</p></div><div><span>03</span><strong>A reveal workflow</strong><p>A repeatable process you can adapt to your next brief.</p></div><div><span>04</span><strong>A stronger offer</strong><p>A practical way to add AI product advertising to your services.</p></div></div></div>
         </section>
 
         <section className="workflow-section section-pad" id="workflow">
           <div className="section-label"><span>03</span><span>THE WORKFLOW</span></div>
           <div className="workflow-grid">
             <div className="workflow-copy">
-              <h2>From still image<br />to <span>moving story.</span></h2>
+              <h2><span className="title-line">From still image</span><br /><span className="title-line">to moving story.</span></h2>
               <p>The magic is not one perfect prompt. It is the sequence. Learn a simple creative system you can repeat across products, platforms and client briefs.</p>
               <div className="code-note"><span className="code-dot code-dot--red"></span><span className="code-dot code-dot--yellow"></span><span className="code-dot code-dot--green"></span><code>/product-reveal /v01</code></div>
             </div>
@@ -364,7 +364,7 @@ function App() {
         <section className="audience-section section-pad" id="audience">
           <div className="audience-intro">
             <div className="section-label section-label-dark"><span>04</span><span>WHO IT'S FOR</span></div>
-            <h2>For creatives ready<br /><em>to make more.</em></h2>
+            <h2><span className="title-line">For creatives ready</span><br /><span className="title-line">to make more.</span></h2>
           </div>
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
@@ -377,7 +377,7 @@ function App() {
           <div className="testimonials-heading-row">
             <div>
               <div className="section-label testimonials-label"><span>05</span><span>IN THEIR WORDS</span></div>
-              <h2>See what a<br /><span>system changes.</span></h2>
+              <h2><span className="title-line">See what a</span><br /><span className="title-line">system changes.</span></h2>
             </div>
             <div className="testimonials-intro"><span className="testimonials-mark">“</span><p>See what changes when the tools, the thinking and the workflow finally work together.</p><span className="testimonials-note">PARTICIPANT FEEDBACK / NIGERIA + EUROPE</span></div>
           </div>
@@ -406,7 +406,7 @@ function App() {
         </section>
 
         <section className="benefits-section section-pad">
-          <div className="benefit-copy"><div className="section-label"><span>06</span><span>THE PAYOFF</span></div><h2>Create faster.<br /><span>Deliver more.</span></h2></div>
+          <div className="benefit-copy"><div className="section-label"><span>06</span><span>THE PAYOFF</span></div><h2><span className="title-line">Create faster.</span><br /><span className="title-line">Deliver more.</span></h2></div>
           <div className="benefit-list">
             <div className="benefit-item"><span className="benefit-icon"><Check /></span><div><strong>Reduce production costs</strong><p>Produce stronger product assets without starting with a full production crew.</p></div></div>
             <div className="benefit-item"><span className="benefit-icon"><Check /></span><div><strong>Create content faster</strong><p>Turn one product photo into multiple creative directions in a focused workflow.</p></div></div>
@@ -420,7 +420,7 @@ function App() {
             <div className="offer-visual"><div className="offer-orb"></div><div className="offer-visual-text">TURN THE<br /><span>STILL</span><br />INTO A<br /><span>STORY.</span></div><div className="offer-visual-code">AI / PRM / 001</div></div>
             <div className="offer-details">
               <div className="section-label"><span>07</span><span>THE OFFER</span></div>
-              <h2>Your next<br /><span>product ad</span> starts here.</h2>
+              <h2><span className="title-line">Your next</span><br /><span className="title-line">product ad starts here.</span></h2>
               <p>Join a practical two session training and learn how to turn one product image into a reveal that looks intentional, cinematic and ready to publish.</p>
               <div className="price-row"><div><span className="price-label">EARLY BIRD</span><strong>{PRICING.earlyBird}</strong></div><div className="regular-price"><span>REGULAR PRICE</span><del>{PRICING.regular}</del></div></div>
               <button className="button button-primary button-wide" onClick={openRegistration}>Register via Paystack <ArrowUpRight size={18} /></button>
@@ -432,7 +432,7 @@ function App() {
         </section>
 
         <section className="faq-section section-pad" id="faqs">
-          <div className="faq-heading"><div className="section-label"><span>08</span><span>GOOD TO KNOW</span></div><h2>Everything you<br /><span>need to know.</span></h2></div>
+          <div className="faq-heading"><div className="section-label"><span>08</span><span>GOOD TO KNOW</span></div><h2><span className="title-line">Everything you</span><br /><span className="title-line">need to know.</span></h2></div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
               <div className={openFaq === index ? 'faq-item is-open' : 'faq-item'} key={faq.question}>
