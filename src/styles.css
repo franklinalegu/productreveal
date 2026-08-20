@@ -619,3 +619,51 @@ a.play-button { text-decoration: none; }
 .session-card-lime .card-number { color: #c2c9c3; }
 .session-icon--orange,
 .session-icon--blue { background: #8a928c; color: #161a18; }
+
+/* Full colour audit: one calm neutral system for surfaces, titles and supporting UI. */
+:root {
+  --surface-neutral-1: #202523;
+  --surface-neutral-2: #2c322f;
+  --surface-light: #e4e7e2;
+  --accent-neutral: #98a19a;
+  --accent-neutral-light: #c7cdc8;
+}
+.hero h1 .lime-text,
+.hero h1 .period,
+.brief-grid h2 span,
+.brief-grid h2 em,
+.section-heading-row h2 span,
+.workflow-copy h2 span,
+.audience-intro h2 em,
+.testimonials-heading-row h2 span,
+.benefit-copy h2 span,
+.offer-details h2 span,
+.faq-heading h2 span,
+.session-card h3 span,
+.registration-modal h2 span,
+.offer-visual-text span { color: inherit; }
+.announcement-bar { background: var(--surface-light); color: var(--ink); }
+.testimonials-section { background: var(--surface-light); color: var(--ink); }
+.testimonial-card-dark { background: var(--surface-neutral-1); color: var(--cream); }
+.testimonial-card-cream { background: #d5dad5; color: var(--ink); }
+.testimonial-card-orange,
+.testimonial-card-blue { background: var(--surface-neutral-2); color: var(--cream); }
+.testimonial-card-orange .testimonial-index,
+.testimonial-card-blue .testimonial-index { color: var(--accent-neutral-light); }
+.testimonial-card-orange .testimonial-role,
+.testimonial-card-blue .testimonial-role,
+.testimonial-card-orange .testimonial-footer,
+.testimonial-card-blue .testimonial-footer { color: #aeb6af; }
+.offer-visual { background: #3a413d; color: var(--cream); }
+.offer-visual-text span { color: inherit; }
+.code-dot--red, .code-dot--yellow, .code-dot--green { background: var(--accent-neutral); }
+.caption-pulse { background: var(--accent-neutral-light); }
+.orbit-one { background: var(--accent-neutral); }
+.orbit-two { border-color: var(--accent-neutral-light); }
+.art-sticker { background: var(--surface-light); color: var(--ink); }
+.site-footer { background: var(--surface-light); color: var(--ink); }
+.site-footer .brand-mark span:nth-child(1), .site-footer .brand-mark span:nth-child(2) { background: var(--accent-neutral); }
+.site-footer .brand-mark span:nth-child(3) { background: var(--ink); }
+.site-footer .footer-brand-title em { color: var(--ink); }
+.signal-item--accent strong { color: var(--accent-neutral); }
+.price-label { color: var(--accent-neutral-light); }
