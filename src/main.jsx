@@ -463,7 +463,8 @@ function App() {
               <>
                 <div className="modal-kicker">RESERVE YOUR PLACE / 001</div>
                 <h2 id="registration-title">Ready to make<br /><span>something move?</span></h2>
-                <p>Leave your details and continue to the secure Paystack checkout. Early bird access is {PRICING.earlyBird}.</p>
+                <div className="registration-steps"><div className="step-chip is-active"><strong>01</strong><span>Your details</span></div><div className="step-chip"><strong>02</strong><span>Pay securely</span></div></div>
+                <p>Leave your details first. Once they are saved, you will continue to the secure Paystack checkout. Early bird access is {PRICING.earlyBird}.</p>
                 <form onSubmit={handleSubmit}>
                   <label>Full name<input name="name" type="text" placeholder="Your name" required /></label>
                   <label>Email address<input name="email" type="email" placeholder="you@example.com" required /></label>
@@ -475,7 +476,7 @@ function App() {
                 </form>
               </>
             ) : (
-              <div className="success-state"><div className="success-mark"><Check size={29} /></div><div className="modal-kicker">YOU'RE ON THE LIST</div><h2>{submittedName ? `${submittedName.split(' ')[0]}, you are` : 'You are'}<br /><span>one step closer.</span></h2><p>Your registration details are saved. Complete payment through Paystack, then add the class to your calendar.</p><a className="button button-primary button-wide" href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>Open Paystack checkout <ArrowUpRight size={18} /></a><div className="calendar-actions"><a href={GOOGLE_CALENDAR_URL} target="_blank" rel="noreferrer" onClick={() => trackEvent('calendar_click', { type: 'google' })}>Add to Google Calendar</a><a href="/class-calendar.ics" download onClick={() => trackEvent('calendar_click', { type: 'ics' })}>Download calendar file</a></div><button className="modal-text-button" onClick={() => setModalOpen(false)}>I'll do this later</button></div>
+              <div className="success-state"><div className="success-mark"><Check size={29} /></div><div className="modal-kicker">STEP 1 COMPLETE / 002</div><h2>{submittedName ? `${submittedName.split(' ')[0]}, you are` : 'You are'}<br /><span>one step closer.</span></h2><div className="registration-steps is-complete"><div className="step-chip is-done"><strong>01</strong><span>Details saved</span></div><div className="step-chip is-active"><strong>02</strong><span>Pay securely</span></div></div><p>Your details are saved. Your place is confirmed after payment. Use the same email on Paystack so your registration and payment stay easy to match.</p><a className="button button-primary button-wide" href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>Proceed to secure payment <ArrowUpRight size={18} /></a><div className="calendar-actions"><a href={GOOGLE_CALENDAR_URL} target="_blank" rel="noreferrer" onClick={() => trackEvent('calendar_click', { type: 'google' })}>Add to Google Calendar</a><a href="/class-calendar.ics" download onClick={() => trackEvent('calendar_click', { type: 'ics' })}>Download calendar file</a></div><button className="modal-text-button" onClick={() => setModalOpen(false)}>I'll do this later</button></div>
             )}
           </div>
         </div>

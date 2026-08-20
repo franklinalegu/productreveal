@@ -677,6 +677,19 @@ a.play-button { text-decoration: none; }
 .signal-item--accent strong { color: var(--accent-neutral); }
 .price-label { color: var(--accent-neutral-light); }
 
+/* Two step registration handoff */
+.registration-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 27px 0 20px; }
+.step-chip { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px; min-height: 40px; padding: 8px 9px; border: 1px solid rgba(17,19,19,.18); color: #68716a; font-family: var(--mono); font-size: 8px; letter-spacing: .04em; text-transform: uppercase; }
+.step-chip strong { color: var(--orange); font-size: 9px; font-weight: 400; }
+.step-chip.is-active { border-color: var(--ink); background: var(--ink); color: var(--cream); }
+.step-chip.is-active strong { color: var(--lime); }
+.step-chip.is-done { border-color: var(--ink); background: var(--lime); color: var(--ink); }
+.step-chip.is-done strong { color: var(--ink); }
+.success-state .registration-steps { margin-top: 27px; }
+@media (max-width: 430px) {
+  .registration-steps { grid-template-columns: 1fr; gap: 6px; }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
