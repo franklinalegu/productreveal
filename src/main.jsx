@@ -88,6 +88,17 @@ const getSavedRegistration = () => {
   }
 }
 
+const Logo = ({ footer = false }) => (
+  <span className={footer ? 'brand-lockup brand-lockup-footer' : 'brand-lockup'}>
+    <svg className="brand-glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <rect x="1" y="1" width="32" height="32" rx="9" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10 24V10h7.1c3.4 0 5.6 1.8 5.6 4.7 0 2.9-2.2 4.7-5.6 4.7H10m7-4.7H10m7.1 4.7L23 24" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="26.5" cy="7.5" r="2.5" fill="var(--lime)" />
+    </svg>
+    <span className="brand-wordmark"><b>AI PRODUCT</b><em>REVEAL ADS</em></span>
+  </span>
+)
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [videoOpen, setVideoOpen] = useState(false)
@@ -266,13 +277,12 @@ function App() {
 
       <header className="site-header">
         <button className="brand" onClick={() => scrollToId('home')} aria-label="Back to top">
-          <span className="brand-mark"><span></span><span></span><span></span></span>
-          <span className="brand-type">PRODUCT<br /><em>REVEAL</em></span>
+          <Logo />
         </button>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Main navigation">
-          <button onClick={() => scrollToId('masterclass')}>The masterclass <span>01</span></button>
-          <button onClick={() => scrollToId('workflow')}>The workflow <span>02</span></button>
-          <button onClick={() => scrollToId('testimonials')}>Testimonials <span>03</span></button>
+          <button onClick={() => scrollToId('masterclass')}>Programme <span>01</span></button>
+          <button onClick={() => scrollToId('workflow')}>How it works <span>02</span></button>
+          <button onClick={() => scrollToId('testimonials')}>Proof <span>03</span></button>
           <button onClick={() => scrollToId('faqs')}>FAQ <span>04</span></button>
         </nav>
         <button className="header-cta" onClick={openRegistration}>Secure your seat <ArrowUpRight size={16} /></button>
@@ -284,7 +294,7 @@ function App() {
       <main>
         <section className="hero section-pad" id="home">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="eyebrow-dot"></span>AI CREATIVE TRAINING / 001</div>
+            <div className="eyebrow"><span className="eyebrow-dot"></span>AI PRODUCT REVEAL ADS / LIVE INTENSIVE</div>
             <h1><span className="title-line">Turn one photo</span><br /><span className="title-line">into a product</span><br /><span className="title-line">ad.</span></h1>
             <p className="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div className="hero-actions">
@@ -500,7 +510,7 @@ function App() {
       </main>
 
       <footer className="site-footer section-pad">
-        <div className="footer-top"><div className="footer-brand"><span className="brand-mark"><span></span><span></span><span></span></span><span className="footer-brand-title">AI PRODUCT<br /><em>REVEAL ADS</em></span></div><p>From one product photo<br />to a world of possibilities.</p><button className="back-to-top" onClick={() => scrollToId('home')}>Back to top <ArrowUpRight size={16} /></button></div>
+        <div className="footer-top"><div className="footer-brand"><Logo footer /></div><p>From one product photo<br />to a world of possibilities.</p><button className="back-to-top" onClick={() => scrollToId('home')}>Back to top <ArrowUpRight size={16} /></button></div>
         <div className="footer-bottom"><span>AI PRODUCT REVEAL ADS MASTERCLASS</span><span>© 2026 / BUILT FOR THE CURIOUS</span><a href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>paystack.shop/pay/productreview <ArrowUpRight size={14} /></a></div>
       </footer>
 

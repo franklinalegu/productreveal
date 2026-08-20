@@ -831,3 +831,37 @@ a.play-button { text-decoration: none; }
   .testimonial-card blockquote { margin: 34px 0 28px; font-size: clamp(23px, 7vw, 30px); line-height: 1.03; }
   .testimonial-footer { font-size: 8px; }
 }
+
+/* Identity system: compact reveal mark plus a two-line wordmark. */
+.brand { display: inline-flex; padding: 0; }
+.brand-lockup { display: inline-flex; align-items: center; gap: 10px; color: var(--cream); }
+.brand-glyph { display: block; width: 30px; height: 30px; color: var(--cream); }
+.brand-wordmark { display: grid; gap: 2px; text-align: left; font-family: var(--mono); font-size: 8px; line-height: 1; letter-spacing: .12em; }
+.brand-wordmark b { color: var(--cream); font-weight: 500; }
+.brand-wordmark em { color: var(--lime); font-style: normal; }
+.brand-lockup-footer { color: var(--ink); }
+.brand-lockup-footer .brand-glyph { color: var(--ink); }
+.brand-lockup-footer .brand-wordmark b { color: var(--ink); }
+.brand-lockup-footer .brand-wordmark em { color: var(--ink); }
+.footer-brand-title { display: none; }
+@media (max-width: 720px) {
+  .brand-lockup { gap: 8px; }
+  .brand-glyph { width: 27px; height: 27px; }
+  .brand-wordmark { font-size: 7px; }
+}
+
+/* Core surfaces and interaction polish for the redesign. */
+.site-header { border-bottom-color: rgba(239,238,229,.1); }
+.hero { max-width: 1480px; margin-inline: auto; }
+.hero-art::before { transform: rotate(1.5deg); background: var(--ink-2); }
+.hero-art::after { display: none; }
+.art-image-wrap { border-radius: 4px; }
+.button, .header-cta { border-radius: 2px; }
+.button:focus-visible, .header-cta:focus-visible, .main-nav button:focus-visible, .main-nav a:focus-visible, .play-button:focus-visible, .faq-question:focus-visible, .brand:focus-visible, .menu-toggle:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
+.session-card, .testimonial-card, .offer-card, .takeaway-panel { border-radius: 3px; }
+.session-card:hover, .testimonial-card:hover { box-shadow: 0 18px 44px rgba(0,0,0,.16); transform: translateY(-3px); }
+.session-card { transition: transform .25s ease, box-shadow .25s ease; }
+.testimonial-card { transition: transform .25s ease, box-shadow .25s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .session-card, .testimonial-card { transition: none; }
+}
