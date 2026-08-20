@@ -903,3 +903,11 @@ a.play-button { text-decoration: none; }
 .audience-intro h2 .title-line { display: block; white-space: normal !important; overflow-wrap: anywhere; }
 .audience-content, .audience-content * { max-width: 100%; }
 .audience-lede, .audience-content p { overflow-wrap: anywhere; }
+
+/* Audience heading: prevent empty line gaps and give narrow screens a controlled wrap. */
+.audience-intro h2 .title-line { display: inline-block; white-space: normal !important; }
+.mobile-title-break { display: none; }
+@media (max-width: 520px) {
+  .audience-intro h2 { font-size: clamp(44px, 12vw, 60px); line-height: .96; }
+  .mobile-title-break { display: inline; }
+}
