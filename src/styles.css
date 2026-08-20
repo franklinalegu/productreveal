@@ -936,3 +936,12 @@ a.play-button { text-decoration: none; }
   .takeaway-heading h3 .title-line { display: block; }
   .brief-grid h2, .section-heading-row h2, .workflow-copy h2, .audience-intro h2, .benefit-copy h2, .offer-details h2, .faq-heading h2 { font-size: clamp(42px, 12vw, 62px); }
 }
+
+/* Calendar actions are primary CTAs in the offer section, not quiet text links. */
+.public-calendar-actions { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.public-calendar-actions a { min-height: 50px; border: 1px solid var(--lime); background: var(--lime); color: var(--ink); font-size: 9px; font-weight: 500; }
+.public-calendar-actions a:nth-child(2) { border-color: var(--line); background: transparent; color: var(--cream); }
+.public-calendar-actions a:hover { border-color: var(--lime); background: var(--lime); color: var(--ink); }
+@media (max-width: 720px) {
+  .public-calendar-actions { grid-template-columns: 1fr; }
+}

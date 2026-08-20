@@ -374,7 +374,7 @@ function App() {
             </div>
             <p className="heading-aside">You will leave with more than prompts. You will leave with a repeatable way to move from brief to storyboard to finished reveal without losing the idea along the way.</p>
           </div>
-          <div className="program-facts" aria-label="Program details"><div className="program-fact"><strong>02</strong><span>live sessions</span></div><div className="program-fact"><strong>04</strong><span>AI tools in sequence</span></div><div className="program-fact"><strong>05 SEP</strong><span>class start</span></div><div className="program-fact"><strong>8 PM</strong><span>WAT</span></div></div>
+          
           <div className="session-grid">
             <article className="session-card session-card-dark">
               <div className="card-top"><span className="card-number">01</span><span className="card-tag">THINK / WRITE</span></div>
@@ -430,7 +430,7 @@ function App() {
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
             <div className="audience-pills"><span>Content creators</span><span>Marketers</span><span>Agencies</span><span>Designers</span><span>Freelancers</span><span>Entrepreneurs</span><span>Ecommerce owners</span><span>Creative students</span></div>
-            <div className="quote-card"><div className="quote-mark">“</div><blockquote>More confidence to create. More speed to deliver. More ways to turn a product image into business value.</blockquote><div className="quote-byline"><span>WHAT PARTICIPANTS TAKE AWAY</span></div></div>
+            
           </div>
         </section>
 
