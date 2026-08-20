@@ -955,6 +955,15 @@ a.play-button { text-decoration: none; }
   .public-calendar-actions { grid-template-columns: 1fr; }
 }
 
+/* Hero overflow guard for tablet and compact preview widths. */
+@media (max-width: 900px) {
+  .hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding-top: 70px; padding-bottom: 74px; }
+  .hero-copy { max-width: 760px; }
+  .hero h1 { max-width: 100%; font-size: clamp(54px, 10vw, 92px); line-height: .95; }
+  .hero h1 .title-line { white-space: normal !important; }
+  .hero-art { width: min(100%, 560px); align-self: center; margin-top: 54px; }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
