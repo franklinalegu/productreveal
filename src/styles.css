@@ -561,3 +561,17 @@ a.play-button { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .session-card, .session-icon { animation: none; }
 }
+
+/* Monochrome title treatment */
+.hero h1 .lime-text,
+.hero h1 .period,
+.brief-grid h2 span,
+.brief-grid h2 em,
+.section-heading-row h2 span,
+.workflow-copy h2 span,
+.audience-intro h2 em,
+.testimonials-heading-row h2 span,
+.benefit-copy h2 span,
+.offer-details h2 span,
+.faq-heading h2 span,
+.session-card h3 span { color: inherit; }
