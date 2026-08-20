@@ -894,6 +894,17 @@ a.play-button { text-decoration: none; }
   .legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { font-size: 8px; }
 }
 
+/* Audience layout guard: stack before the two column layout becomes cramped. */
+@media (max-width: 900px) {
+  .audience-section { grid-template-columns: 1fr; gap: 42px; }
+  .audience-intro h2 { max-width: 100%; font-size: clamp(54px, 11vw, 88px); }
+  .audience-intro .title-line { white-space: normal; }
+  .audience-content { padding-top: 0; max-width: 700px; }
+}
+@media (max-width: 520px) {
+  .audience-intro h2 { font-size: clamp(48px, 14vw, 70px); }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }

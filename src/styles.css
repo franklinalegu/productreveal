@@ -884,3 +884,14 @@ a.play-button { text-decoration: none; }
   .legacy-brand-lockup .brand-mark span { width: 5px; }
   .legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { font-size: 8px; }
 }
+
+/* Audience layout guard: stack before the two column layout becomes cramped. */
+@media (max-width: 900px) {
+  .audience-section { grid-template-columns: 1fr; gap: 42px; }
+  .audience-intro h2 { max-width: 100%; font-size: clamp(54px, 11vw, 88px); }
+  .audience-intro .title-line { white-space: normal; }
+  .audience-content { padding-top: 0; max-width: 700px; }
+}
+@media (max-width: 520px) {
+  .audience-intro h2 { font-size: clamp(48px, 14vw, 70px); }
+}
