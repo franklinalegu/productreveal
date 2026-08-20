@@ -8,11 +8,11 @@ A responsive landing page for the AI Product Reveal Ads Masterclass.
 - Live countdown to September 05, 2026 at 8:00 PM WAT
 - Two session curriculum and workflow explanation
 - Audience, benefits and testimonial sections
-- Registration form capture for Google Sheets
+- Multi step registration flow with Formspree capture
 - Paystack checkout CTA
 - Google Calendar link and downloadable calendar file
 - Mobile sticky registration CTA
-- Consent checkbox and registration privacy note
+- Consent checkbox, registration privacy note and saved form progress
 - Optional Google Analytics event tracking
 
 ## Local setup

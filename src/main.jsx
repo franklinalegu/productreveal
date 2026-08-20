@@ -74,6 +74,18 @@ const getUtmParams = () => {
   }
 }
 
+const REGISTRATION_DRAFT_KEY = 'ai-product-reveal-registration-draft'
+const EMPTY_REGISTRATION = { name: '', email: '', phone: '', role: '', consent: false }
+
+const getSavedRegistration = () => {
+  if (typeof window === 'undefined') return EMPTY_REGISTRATION
+  try {
+    return { ...EMPTY_REGISTRATION, ...(JSON.parse(window.localStorage.getItem(REGISTRATION_DRAFT_KEY)) || {}) }
+  } catch {
+    return EMPTY_REGISTRATION
+  }
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [videoOpen, setVideoOpen] = useState(false)
@@ -84,6 +96,8 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [submittedName, setSubmittedName] = useState('')
+  const [registrationStep, setRegistrationStep] = useState(0)
+  const [registrationDraft, setRegistrationDraft] = useState(getSavedRegistration)
 
   useEffect(() => {
     if (!GA_MEASUREMENT_ID || document.querySelector(`script[data-ga-id="${GA_MEASUREMENT_ID}"]`)) return
@@ -127,22 +141,54 @@ function App() {
   const openRegistration = () => {
     setFormSent(false)
     setSubmitError('')
+    setRegistrationStep(0)
     setModalOpen(true)
     trackEvent('registration_opened')
+  }
+
+  const updateRegistrationDraft = (event) => {
+    const { name, type, checked, value } = event.target
+    const next = { ...registrationDraft, [name]: type === 'checkbox' ? checked : value }
+    setRegistrationDraft(next)
+    try { window.localStorage.setItem(REGISTRATION_DRAFT_KEY, JSON.stringify(next)) } catch { /* storage is optional */ }
+  }
+
+  const beginRegistration = () => {
+    setSubmitError('')
+    setRegistrationStep(1)
+    trackEvent('registration_started')
+  }
+
+  const continueToDetails = () => {
+    if (!registrationDraft.name.trim() || !registrationDraft.email.trim()) {
+      setSubmitError('Add your name and email to continue.')
+      return
+    }
+    setSubmitError('')
+    setRegistrationStep(2)
+    trackEvent('registration_details_completed')
+  }
+
+  const goBackToIntro = () => {
+    setSubmitError('')
+    setRegistrationStep(0)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     setSubmitError('')
+    if (!registrationDraft.role || !registrationDraft.consent) {
+      setSubmitError('Choose your role and accept the registration consent to continue.')
+      return
+    }
     setIsSubmitting(true)
-    const formData = new FormData(event.currentTarget)
     const utm = getUtmParams()
     const payload = new URLSearchParams({
-      name: String(formData.get('name') || ''),
-      email: String(formData.get('email') || ''),
-      phone: String(formData.get('phone') || ''),
-      role: String(formData.get('role') || ''),
-      consent: formData.get('consent') ? 'yes' : 'no',
+      name: registrationDraft.name,
+      email: registrationDraft.email,
+      phone: registrationDraft.phone,
+      role: registrationDraft.role,
+      consent: registrationDraft.consent ? 'yes' : 'no',
       classStart: CLASS_DETAILS.startIso,
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Africa/Lagos',
       source: 'AI Product Reveal landing page',
@@ -161,9 +207,9 @@ function App() {
         body: JSON.stringify(Object.fromEntries(payload.entries())),
       })
       if (!response.ok) throw new Error('Formspree rejected the registration')
-      setSubmittedName(String(formData.get('name') || ''))
+      setSubmittedName(registrationDraft.name)
       setFormSent(true)
-      trackEvent('registration_submitted', { role: String(formData.get('role') || '') })
+      trackEvent('registration_submitted', { role: registrationDraft.role })
     } catch (error) {
       setSubmitError('Registration capture is not connected yet. Add your Formspree endpoint before publishing, then try again.')
       trackEvent('registration_error', { message: error.message })
@@ -172,7 +218,9 @@ function App() {
     }
   }
 
-  const handlePaymentClick = () => trackEvent('checkout_click', { destination: PAYMENT_LINK })
+  const handlePaymentClick = () => {
+    trackEvent('checkout_click', { destination: PAYMENT_LINK })
+  }
   const handleVideoPlay = () => {
     setVideoOpen(true)
     trackEvent('video_play', { video: 'product reveal clip' })
@@ -459,23 +507,55 @@ function App() {
         <div className="modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setModalOpen(false) }}>
           <div className="registration-modal" role="dialog" aria-modal="true" aria-labelledby="registration-title">
             <button className="modal-close" onClick={() => setModalOpen(false)} aria-label="Close registration"><span></span><span></span></button>
-            {!formSent ? (
-              <>
-                <div className="modal-kicker">RESERVE YOUR PLACE / 001</div>
-                <h2 id="registration-title">Ready to make<br /><span>something move?</span></h2>
+            {!formSent && registrationStep === 0 && (
+              <div className="registration-intro">
+                <div className="modal-kicker">CLASS REGISTRATION / 001</div>
+                <div className="registration-date-badge"><span></span>{CLASS_DETAILS.display}</div>
+                <h2 id="registration-title">AI Product<br /><span>Reveal Ads.</span></h2>
+                <p>Let’s get you registered. This short form takes less than two minutes and reserves your place after payment.</p>
+                <div className="registration-info-grid">
+                  <div className="registration-info-card"><span>Dates</span><strong>September 05, 2026</strong></div>
+                  <div className="registration-info-card"><span>Time</span><strong>8:00 PM WAT</strong></div>
+                  <div className="registration-info-card"><span>Format</span><strong>Two live sessions</strong></div>
+                  <div className="registration-info-card"><span>Early bird</span><strong>{PRICING.earlyBird}</strong></div>
+                </div>
+                <button className="button button-primary button-wide" onClick={beginRegistration}>Begin registration <ArrowUpRight size={18} /></button>
+                <span className="registration-save-note">Your progress is saved as you complete each step.</span>
+              </div>
+            )}
+
+            {!formSent && registrationStep === 1 && (
+              <div className="registration-form-step">
+                <div className="modal-kicker">STEP 1 OF 2 / YOUR DETAILS</div>
+                <h2 id="registration-title">Tell us<br /><span>who you are.</span></h2>
                 <div className="registration-steps"><div className="step-chip is-active"><strong>01</strong><span>Your details</span></div><div className="step-chip"><strong>02</strong><span>Pay securely</span></div></div>
-                <p>Leave your details first. Once they are saved, you will continue to the secure Paystack checkout. Early bird access is {PRICING.earlyBird}.</p>
-                <form onSubmit={handleSubmit}>
-                  <label>Full name<input name="name" type="text" placeholder="Your name" required /></label>
-                  <label>Email address<input name="email" type="email" placeholder="you@example.com" required /></label>
-                  <label>Phone number <span className="optional-label">OPTIONAL</span><input name="phone" type="tel" placeholder="+234 800 000 0000" /></label>
-                  <label>What best describes you?<select name="role" defaultValue="" required><option value="" disabled>Select one</option><option>Content creator</option><option>Marketer</option><option>Agency or freelancer</option><option>Ecommerce owner</option><option>Student</option><option>Other</option></select></label>
-                  <label className="consent-label"><input name="consent" type="checkbox" required /><span>I agree to receive class updates and registration details. Your information is used only for registration and class communication.</span></label>
-                  {submitError && <div className="form-error" role="alert"><span>{submitError}</span><a href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>Continue directly to Paystack</a></div>}
-                  <button type="submit" className="button button-primary button-wide" disabled={isSubmitting}>{isSubmitting ? 'Saving your place...' : 'Continue to payment'} <ArrowUpRight size={18} /></button>
+                <p>Use the details you check most often. We will use them for class updates and your payment handoff.</p>
+                <form className="registration-form" onSubmit={(event) => { event.preventDefault(); continueToDetails() }}>
+                  <label>Full name<input name="name" type="text" placeholder="Your name" value={registrationDraft.name} onChange={updateRegistrationDraft} required /></label>
+                  <label>Email address<input name="email" type="email" placeholder="you@example.com" value={registrationDraft.email} onChange={updateRegistrationDraft} required /></label>
+                  <label>Phone number <span className="optional-label">OPTIONAL</span><input name="phone" type="tel" placeholder="+234 800 000 0000" value={registrationDraft.phone} onChange={updateRegistrationDraft} /></label>
+                  {submitError && <div className="form-error" role="alert"><span>{submitError}</span></div>}
+                  <div className="form-actions"><button type="button" className="modal-text-button form-back" onClick={goBackToIntro}>Back</button><button type="submit" className="button button-primary">Continue <ArrowUpRight size={18} /></button></div>
                 </form>
-              </>
-            ) : (
+              </div>
+            )}
+
+            {!formSent && registrationStep === 2 && (
+              <div className="registration-form-step">
+                <div className="modal-kicker">STEP 2 OF 2 / YOUR PLACE</div>
+                <h2 id="registration-title">Choose your<br /><span>creative lane.</span></h2>
+                <div className="registration-steps is-complete"><div className="step-chip is-done"><strong>01</strong><span>Details saved</span></div><div className="step-chip is-active"><strong>02</strong><span>Pay securely</span></div></div>
+                <p>Tell us where you are starting from, then save your place and continue to secure payment.</p>
+                <form className="registration-form" onSubmit={handleSubmit}>
+                  <label>What best describes you?<select name="role" value={registrationDraft.role} onChange={updateRegistrationDraft} required><option value="" disabled>Select one</option><option>Content creator</option><option>Marketer</option><option>Agency or freelancer</option><option>Ecommerce owner</option><option>Student</option><option>Other</option></select></label>
+                  <label className="consent-label"><input name="consent" type="checkbox" checked={registrationDraft.consent} onChange={updateRegistrationDraft} required /><span>I agree to receive class updates and registration details. Your information is used only for registration and class communication.</span></label>
+                  {submitError && <div className="form-error" role="alert"><span>{submitError}</span><a href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>Continue directly to Paystack</a></div>}
+                  <div className="form-actions"><button type="button" className="modal-text-button form-back" onClick={() => { setSubmitError(''); setRegistrationStep(1) }}>Back</button><button type="submit" className="button button-primary" disabled={isSubmitting}>{isSubmitting ? 'Saving...' : 'Save and continue'} <ArrowUpRight size={18} /></button></div>
+                </form>
+              </div>
+            )}
+
+            {formSent && (
               <div className="success-state"><div className="success-mark"><Check size={29} /></div><div className="modal-kicker">STEP 1 COMPLETE / 002</div><h2>{submittedName ? `${submittedName.split(' ')[0]}, you are` : 'You are'}<br /><span>one step closer.</span></h2><div className="registration-steps is-complete"><div className="step-chip is-done"><strong>01</strong><span>Details saved</span></div><div className="step-chip is-active"><strong>02</strong><span>Pay securely</span></div></div><p>Your details are saved. Your place is confirmed after payment. Use the same email on Paystack so your registration and payment stay easy to match.</p><a className="button button-primary button-wide" href={PAYMENT_LINK} target="_blank" rel="noreferrer" onClick={handlePaymentClick}>Proceed to secure payment <ArrowUpRight size={18} /></a><div className="calendar-actions"><a href={GOOGLE_CALENDAR_URL} target="_blank" rel="noreferrer" onClick={() => trackEvent('calendar_click', { type: 'google' })}>Add to Google Calendar</a><a href="/class-calendar.ics" download onClick={() => trackEvent('calendar_click', { type: 'ics' })}>Download calendar file</a></div><button className="modal-text-button" onClick={() => setModalOpen(false)}>I'll do this later</button></div>
             )}
           </div>
