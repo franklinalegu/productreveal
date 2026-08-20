@@ -895,3 +895,11 @@ a.play-button { text-decoration: none; }
 @media (max-width: 520px) {
   .audience-intro h2 { font-size: clamp(48px, 14vw, 70px); }
 }
+
+/* Final audience overlap guard: never let the title escape its own column. */
+.audience-section { overflow: hidden; }
+.audience-intro, .audience-content { min-width: 0; }
+.audience-intro h2 { max-width: 100%; overflow-wrap: anywhere; }
+.audience-intro h2 .title-line { display: block; white-space: normal !important; overflow-wrap: anywhere; }
+.audience-content, .audience-content * { max-width: 100%; }
+.audience-lede, .audience-content p { overflow-wrap: anywhere; }
