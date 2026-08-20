@@ -419,7 +419,7 @@ function App() {
         <section className="audience-section section-pad" id="audience">
           <div className="audience-intro">
             <div className="section-label section-label-dark"><span>04</span><span>WHO IT'S FOR</span></div>
-            <h2><span className="title-line">For creatives ready</span><br /><span className="title-line">to make more.</span></h2>
+            <h2><span className="title-line">For creatives</span><br /><span className="title-line">ready to make more.</span></h2>
           </div>
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
