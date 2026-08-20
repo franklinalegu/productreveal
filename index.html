@@ -613,6 +613,22 @@ a.play-button { text-decoration: none; }
   .signal-item:nth-child(2), .signal-item:nth-child(4) { border-bottom: 1px solid var(--line); }
 }
 
+/* Balanced session card palette. Keep both cards in the same neutral family. */
+.session-card-dark,
+.session-card-lime { background: #222725; color: var(--cream); }
+.session-card-lime { background: #2b302d; }
+.session-card-dark h3 span,
+.session-card-lime h3 span { color: inherit; }
+.session-card-lime > p { color: #b3bbb5; }
+.session-card-lime .card-tag,
+.session-card-lime .card-bottom { color: #a8b0aa; }
+.session-card-lime .session-list li { border-color: var(--line); }
+.session-card-lime .session-list li span { color: #c5ccc6; }
+.session-card .card-number,
+.session-card-lime .card-number { color: #c2c9c3; }
+.session-icon--orange,
+.session-icon--blue { background: #8a928c; color: #161a18; }
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
