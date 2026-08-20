@@ -543,3 +543,21 @@ a.play-button { text-decoration: none; }
 @media (max-width: 720px) {
   .program-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 38px; }
 }
+
+/* Title rhythm and animated session cards inspired by the reference presentation. */
+.hero h1 { max-width: 650px; line-height: .91; letter-spacing: -.07em; }
+.brief-grid h2, .section-heading-row h2, .workflow-copy h2, .audience-intro h2, .benefit-copy h2, .offer-details h2, .faq-heading h2 { line-height: .93; letter-spacing: -.065em; }
+.section-heading-row .section-label { margin-bottom: 61px; }
+.session-card { overflow: hidden; animation: session-card-in .72s cubic-bezier(.22,.8,.23,1) both; }
+.session-card:nth-child(2) { animation-delay: .14s; }
+.session-icon { animation: session-icon-float 3.2s ease-in-out infinite; }
+@keyframes session-card-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes session-icon-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@media (max-width: 720px) {
+  .hero h1 { line-height: .94; letter-spacing: -.065em; }
+  .section-heading-row .section-label { margin-bottom: 48px; }
+  .brief-grid h2, .section-heading-row h2, .workflow-copy h2, .audience-intro h2, .benefit-copy h2, .offer-details h2, .faq-heading h2 { line-height: .95; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .session-card, .session-icon { animation: none; }
+}
