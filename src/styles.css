@@ -954,3 +954,14 @@ a.play-button { text-decoration: none; }
   .hero h1 .title-line { white-space: normal !important; }
   .hero-art { width: min(100%, 560px); align-self: center; margin-top: 54px; }
 }
+
+/* Hero headline: shorter lines and a calmer display size at every viewport. */
+.hero h1 { max-width: 620px; font-size: clamp(52px, 6.6vw, 92px); line-height: .94; }
+.hero h1 .title-line { display: block; white-space: nowrap; }
+@media (max-width: 900px) {
+  .hero h1 { max-width: 100%; font-size: clamp(48px, 9vw, 78px); }
+  .hero h1 .title-line { white-space: normal; }
+}
+@media (max-width: 520px) {
+  .hero h1 { font-size: clamp(43px, 12.7vw, 64px); }
+}

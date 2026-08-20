@@ -964,6 +964,17 @@ a.play-button { text-decoration: none; }
   .hero-art { width: min(100%, 560px); align-self: center; margin-top: 54px; }
 }
 
+/* Hero headline: shorter lines and a calmer display size at every viewport. */
+.hero h1 { max-width: 620px; font-size: clamp(52px, 6.6vw, 92px); line-height: .94; }
+.hero h1 .title-line { display: block; white-space: nowrap; }
+@media (max-width: 900px) {
+  .hero h1 { max-width: 100%; font-size: clamp(48px, 9vw, 78px); }
+  .hero h1 .title-line { white-space: normal; }
+}
+@media (max-width: 520px) {
+  .hero h1 { font-size: clamp(43px, 12.7vw, 64px); }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
@@ -1006,7 +1017,7 @@ a.play-button { text-decoration: none; }
         <section class="hero section-pad" id="home">
           <div class="hero-copy">
             <div class="eyebrow"><span class="eyebrow-dot"></span>AI PRODUCT REVEAL ADS / LIVE INTENSIVE</div>
-            <h1><span class="title-line">Turn one photo</span><span class="title-line">into a product ad.</span></h1>
+            <h1><span class="title-line">Turn one</span><span class="title-line">photo into a</span><span class="title-line">product ad.</span></h1>
             <p class="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div class="hero-actions"><a class="button button-primary" href="#register">Join the masterclass <span>↗</span></a><a class="text-button" href="#workflow">See how it works <span>→</span></a></div>
             <div class="countdown-card static-countdown" aria-label="Countdown to class start" aria-live="polite"><div class="countdown-top"><span>CLASS BEGINS</span><span>05 SEP / 8:00 PM WAT</span></div><div class="countdown-grid" id="static-countdown-grid"><div class="countdown-unit"><strong id="static-days">00</strong><span>DAYS</span></div><div class="countdown-unit"><strong id="static-hours">00</strong><span>HOURS</span></div><div class="countdown-unit"><strong id="static-minutes">00</strong><span>MINUTES</span></div><div class="countdown-unit"><strong id="static-seconds">00</strong><span>SECONDS</span></div></div><div class="countdown-live" id="static-countdown-live" hidden>CLASS IS LIVE</div></div>
