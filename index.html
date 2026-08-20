@@ -690,6 +690,116 @@ a.play-button { text-decoration: none; }
   .registration-steps { grid-template-columns: 1fr; gap: 6px; }
 }
 
+/* Dedicated mobile composition */
+@media (max-width: 720px) {
+  html, body { overflow-x: hidden; }
+  body { padding-bottom: 72px; }
+  .site-shell { min-width: 0; }
+  .announcement-bar { height: 24px; font-size: 7px; }
+  .announcement-track { gap: 17px; }
+  .site-header { height: 64px; padding: 0 20px; border-bottom-color: rgba(239,238,229,.12); }
+  .brand { gap: 8px; }
+  .brand-mark { width: 21px; height: 20px; }
+  .brand-mark span { width: 5px; }
+  .brand-type { font-size: 8px; }
+  .menu-toggle { width: 36px; height: 36px; }
+  .main-nav.is-open { top: 64px; padding-left: 20px; padding-right: 20px; }
+  .main-nav.is-open button, .main-nav.is-open a { font-size: 9px; }
+
+  .hero { gap: 0; padding: 54px 20px 66px; background: radial-gradient(circle at 100% 18%, rgba(255,105,57,.06), transparent 16rem); }
+  .hero-copy { width: 100%; }
+  .eyebrow { font-size: 8px; }
+  .hero h1 { max-width: 100%; margin: 25px 0 23px; font-size: clamp(43px, 12.7vw, 64px); line-height: .93; letter-spacing: -.07em; }
+  .hero-lede { max-width: 360px; font-size: 15px; line-height: 1.46; }
+  .hero-actions { width: 100%; flex-direction: column; align-items: stretch; gap: 12px; margin-top: 27px; }
+  .hero-actions .button { width: 100%; }
+  .hero-actions .text-button { align-self: flex-start; }
+  .countdown-card { width: 100%; margin-top: 25px; padding: 13px 10px 12px; }
+  .countdown-top { font-size: 7px; }
+  .countdown-grid { gap: 5px; margin-top: 12px; }
+  .countdown-unit { padding: 10px 4px 8px; }
+  .countdown-unit strong { font-size: clamp(24px, 8.5vw, 36px); }
+  .countdown-unit span { margin-top: 7px; font-size: 6px; }
+  .hero-note { margin-top: 27px; font-size: 8px; }
+  .hero-art { width: 100%; max-width: 560px; aspect-ratio: .94; align-self: center; margin-top: 42px; padding: 12px; }
+  .hero-art::before { inset: 0; transform: none; }
+  .hero-art::after, .art-orbit { display: none; }
+  .art-topline, .art-footer { font-size: 7px; }
+  .art-image-wrap { height: calc(100% - 59px); }
+  .art-caption { top: 10px; left: 10px; padding: 6px 7px; font-size: 7px; }
+  .play-button { width: 58px; height: 58px; }
+  .art-sticker { right: 10px; bottom: 10px; width: 54px; height: 54px; font-size: 7px; }
+
+  .signal-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: 20px; padding-right: 20px; }
+  .signal-intro { min-height: 57px; }
+  .signal-item { min-height: 77px; padding: 15px 9px; gap: 8px; }
+  .signal-item strong { font-size: 22px; }
+  .signal-item span { font-size: 7px; }
+
+  .brief-section, .masterclass-section, .workflow-section, .audience-section, .testimonials-section, .benefits-section, .faq-section { padding-top: 82px; padding-bottom: 82px; }
+  .brief-grid, .section-heading-row, .workflow-grid, .audience-section, .benefits-section, .faq-section { grid-template-columns: 1fr; gap: 38px; }
+  .brief-grid { margin-top: 42px; }
+  .brief-grid h2, .section-heading-row h2, .workflow-copy h2, .audience-intro h2, .benefit-copy h2, .offer-details h2, .faq-heading h2 { max-width: 100%; font-size: clamp(48px, 14.5vw, 68px); line-height: .96; }
+  .brief-copy p, .workflow-copy > p, .benefit-item p { font-size: 14px; }
+  .brief-copy .lead-copy { font-size: 19px; }
+  .brief-footnote { margin-top: 42px; font-size: 8px; flex-wrap: wrap; }
+  .section-heading-row .section-label { margin-bottom: 42px; }
+  .heading-aside { max-width: 440px; margin: 0; font-size: 14px; }
+  .program-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 36px; }
+  .program-fact { min-height: 75px; padding: 12px; }
+  .program-fact strong { font-size: 24px; }
+  .program-fact span { font-size: 7px; }
+  .session-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 45px; }
+  .session-card { min-height: 0; padding: 25px; }
+  .session-icon { margin-top: 48px; margin-bottom: 22px; }
+  .session-card h3 { font-size: 42px; line-height: .96; }
+  .session-card > p { min-height: 0; margin-top: 19px; margin-bottom: 29px; }
+  .session-list { font-size: 9px; }
+  .tool-line { gap: 7px; margin-top: 27px; font-size: 8px; }
+  .tool-chip { padding: 7px 8px; }
+  .takeaway-panel { margin-top: 37px; }
+  .workflow-section .section-label { margin-bottom: 42px; }
+  .workflow-grid { gap: 52px; }
+  .workflow-steps { width: 100%; }
+  .workflow-step { grid-template-columns: 28px 1fr 28px; gap: 12px; padding: 18px 0; }
+  .workflow-step h3 { font-size: 18px; }
+  .workflow-step p { font-size: 12px; }
+  .audience-intro h2 { margin-top: 42px; }
+  .audience-content { padding-top: 0; }
+  .audience-lede { font-size: 25px; }
+  .audience-pills span { padding: 9px 10px; font-size: 8px; }
+  .quote-card { margin-top: 41px; padding: 23px 21px; }
+  .quote-card blockquote { font-size: 27px; }
+  .testimonial-grid { grid-template-columns: 1fr; margin-top: 45px; gap: 10px; }
+  .testimonial-card { min-height: 280px; padding: 24px; }
+  .testimonial-card blockquote { font-size: 24px; }
+  .benefit-copy h2 { margin-top: 42px; }
+  .benefit-list { margin-top: 11px; }
+  .benefit-item { grid-template-columns: 28px 1fr; gap: 13px; padding: 18px 0; }
+  .benefit-item strong { font-size: 18px; }
+  .offer-section { padding-top: 0; padding-bottom: 82px; }
+  .offer-card { grid-template-columns: 1fr; max-width: 560px; }
+  .offer-visual { min-height: 285px; padding: 25px; }
+  .offer-visual-text { font-size: clamp(52px, 15vw, 76px); }
+  .offer-details { padding: 44px 25px 38px; }
+  .offer-details h2 { margin-top: 42px; }
+  .price-row { align-items: flex-end; gap: 22px; margin: 34px 0 23px; }
+  .price-row strong { font-size: 50px; }
+  .faq-heading h2 { margin-top: 42px; margin-bottom: 38px; }
+  .faq-question { padding: 18px 0; }
+  .faq-question > span:first-child { gap: 11px; font-size: 17px; }
+  .faq-item.is-open .faq-answer p { padding: 0 35px 20px 32px; font-size: 13px; }
+  .footer-top { grid-template-columns: 1fr; min-height: 0; gap: 22px; padding: 27px 0; }
+  .footer-top > p { font-size: 23px; }
+  .back-to-top { justify-self: start; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; padding-top: 20px; }
+  .footer-bottom a { margin-left: 0; }
+  .registration-modal { max-height: calc(100vh - 24px); padding: 25px 20px; }
+  .registration-modal h2 { margin-top: 43px; font-size: 49px; }
+  .success-state h2 { margin-top: 28px; }
+  .calendar-actions { grid-template-columns: 1fr; }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
