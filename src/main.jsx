@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
-import { CLASS_DETAILS, PAYMENT_LINK, PRICING, GOOGLE_SHEETS_ENDPOINT, GA_MEASUREMENT_ID } from './config'
+import { CLASS_DETAILS, PAYMENT_LINK, PRICING, FORM_ENDPOINT, GA_MEASUREMENT_ID } from './config'
 
 const ArrowUpRight = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -151,17 +151,21 @@ function App() {
     })
 
     try {
-      if (!GOOGLE_SHEETS_ENDPOINT) throw new Error('Google Sheets endpoint is not configured')
-      await fetch(GOOGLE_SHEETS_ENDPOINT, {
+      if (!FORM_ENDPOINT || FORM_ENDPOINT.includes('YOUR_FORM_ID')) throw new Error('Formspree endpoint is not configured')
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        mode: 'no-cors',
-        body: payload,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(payload.entries())),
       })
+      if (!response.ok) throw new Error('Formspree rejected the registration')
       setSubmittedName(String(formData.get('name') || ''))
       setFormSent(true)
       trackEvent('registration_submitted', { role: String(formData.get('role') || '') })
     } catch (error) {
-      setSubmitError('Registration capture is not connected yet. Add the Google Sheets Web App URL before publishing, then try again.')
+      setSubmitError('Registration capture is not connected yet. Add your Formspree endpoint before publishing, then try again.')
       trackEvent('registration_error', { message: error.message })
     } finally {
       setIsSubmitting(false)

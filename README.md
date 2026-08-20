@@ -23,24 +23,20 @@ cp .env.example .env.local
 npm run dev
 ```
 
-## Connect the registration form to Google Sheets
+## Connect the registration form with Formspree
 
-1. Create a new Google Sheet.
-2. Open **Extensions → Apps Script**.
-3. Replace the starter code with `google-apps-script/Code.gs`.
-4. Save the project.
-5. Select **Deploy → New deployment**.
-6. Choose **Web app**.
-7. Set **Execute as** to yourself.
-8. Set **Who has access** to anyone.
-9. Deploy and copy the Web app URL ending in `/exec`.
-10. Add it to `.env.local`:
+1. Create a free form at [Formspree](https://formspree.io).
+2. Add the fields used by the landing page: name, email, phone, role, consent, classStart, timezone, source and pageUrl.
+3. Copy the endpoint that looks like `https://formspree.io/f/your-form-id`.
+4. Add it to `.env.local`:
 
 ```bash
-VITE_GOOGLE_SHEETS_ENDPOINT=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
 ```
 
-Restart the Vite server after changing `.env.local`. New registrations will be added to a `Registrations` sheet with timestamp, contact details, role, consent, class date, timezone, source and UTM fields.
+5. Restart the Vite server after changing `.env.local`.
+
+Formspree will receive the registration details and can forward them to your email or dashboard. UTM campaign fields are also included when present.
 
 ## Optional analytics
 

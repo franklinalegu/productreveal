@@ -12,6 +12,6 @@ export const PRICING = {
   regular: '₦15,000',
 }
 
-// Add the deployed Google Apps Script Web App URL in .env.local.
-export const GOOGLE_SHEETS_ENDPOINT = import.meta.env.VITE_GOOGLE_SHEETS_ENDPOINT || ''
+// Add the Formspree endpoint in .env.local.
+export const FORM_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || ''
 export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || ''
