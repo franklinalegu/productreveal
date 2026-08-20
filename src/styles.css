@@ -865,3 +865,22 @@ a.play-button { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .session-card, .testimonial-card { transition: none; }
 }
+
+/* Preserve the original Product Reveal mark and colour identity. */
+.legacy-brand-lockup { display: inline-flex; align-items: center; gap: 11px; color: var(--cream); }
+.legacy-brand-lockup .brand-mark { display: inline-flex; align-items: flex-end; gap: 3px; width: 25px; height: 23px; }
+.legacy-brand-lockup .brand-mark span { display: block; width: 6px; border-radius: 1px 1px 0 0; transform: skew(-15deg); }
+.legacy-brand-lockup .brand-mark span:nth-child(1) { height: 13px; background: var(--lime); }
+.legacy-brand-lockup .brand-mark span:nth-child(2) { height: 21px; background: var(--orange); }
+.legacy-brand-lockup .brand-mark span:nth-child(3) { height: 17px; background: var(--cream); }
+.legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { display: block; font-family: var(--display); font-size: 10px; font-weight: 700; letter-spacing: .08em; line-height: .93; }
+.legacy-brand-lockup .brand-type em, .legacy-brand-lockup .footer-brand-title em { color: var(--lime); font-style: normal; }
+.legacy-brand-lockup-footer { color: var(--ink); }
+.legacy-brand-lockup-footer .brand-mark span:nth-child(3) { background: var(--ink); }
+.legacy-brand-lockup-footer .footer-brand-title em { color: var(--orange); }
+@media (max-width: 720px) {
+  .legacy-brand-lockup { gap: 8px; }
+  .legacy-brand-lockup .brand-mark { width: 21px; height: 20px; }
+  .legacy-brand-lockup .brand-mark span { width: 5px; }
+  .legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { font-size: 8px; }
+}

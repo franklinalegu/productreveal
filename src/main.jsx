@@ -89,13 +89,9 @@ const getSavedRegistration = () => {
 }
 
 const Logo = ({ footer = false }) => (
-  <span className={footer ? 'brand-lockup brand-lockup-footer' : 'brand-lockup'}>
-    <svg className="brand-glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="32" height="32" rx="9" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M10 24V10h7.1c3.4 0 5.6 1.8 5.6 4.7 0 2.9-2.2 4.7-5.6 4.7H10m7-4.7H10m7.1 4.7L23 24" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="26.5" cy="7.5" r="2.5" fill="var(--lime)" />
-    </svg>
-    <span className="brand-wordmark"><b>AI PRODUCT</b><em>REVEAL ADS</em></span>
+  <span className={footer ? 'legacy-brand-lockup legacy-brand-lockup-footer' : 'legacy-brand-lockup'}>
+    <span className="brand-mark"><span></span><span></span><span></span></span>
+    {footer ? <span className="footer-brand-title">AI PRODUCT<br /><em>REVEAL ADS</em></span> : <span className="brand-type">PRODUCT<br /><em>REVEAL</em></span>}
   </span>
 )
 

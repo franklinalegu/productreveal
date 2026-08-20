@@ -875,6 +875,25 @@ a.play-button { text-decoration: none; }
   .session-card, .testimonial-card { transition: none; }
 }
 
+/* Preserve the original Product Reveal mark and colour identity. */
+.legacy-brand-lockup { display: inline-flex; align-items: center; gap: 11px; color: var(--cream); }
+.legacy-brand-lockup .brand-mark { display: inline-flex; align-items: flex-end; gap: 3px; width: 25px; height: 23px; }
+.legacy-brand-lockup .brand-mark span { display: block; width: 6px; border-radius: 1px 1px 0 0; transform: skew(-15deg); }
+.legacy-brand-lockup .brand-mark span:nth-child(1) { height: 13px; background: var(--lime); }
+.legacy-brand-lockup .brand-mark span:nth-child(2) { height: 21px; background: var(--orange); }
+.legacy-brand-lockup .brand-mark span:nth-child(3) { height: 17px; background: var(--cream); }
+.legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { display: block; font-family: var(--display); font-size: 10px; font-weight: 700; letter-spacing: .08em; line-height: .93; }
+.legacy-brand-lockup .brand-type em, .legacy-brand-lockup .footer-brand-title em { color: var(--lime); font-style: normal; }
+.legacy-brand-lockup-footer { color: var(--ink); }
+.legacy-brand-lockup-footer .brand-mark span:nth-child(3) { background: var(--ink); }
+.legacy-brand-lockup-footer .footer-brand-title em { color: var(--orange); }
+@media (max-width: 720px) {
+  .legacy-brand-lockup { gap: 8px; }
+  .legacy-brand-lockup .brand-mark { width: 21px; height: 20px; }
+  .legacy-brand-lockup .brand-mark span { width: 5px; }
+  .legacy-brand-lockup .brand-type, .legacy-brand-lockup .footer-brand-title { font-size: 8px; }
+}
+
 /* Standalone preview helpers. The page also has a React version for the live Vite preview. */
 .main-nav a { border: 0; background: transparent; color: var(--muted); padding: 10px 0; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .07em; transition: color .2s ease; }
 .main-nav a:hover { color: var(--cream); }
@@ -909,7 +928,7 @@ a.play-button { text-decoration: none; }
     <div class="site-shell">
       <div class="announcement-bar"><div class="announcement-track"><span>EARLY BIRD ₦6,000</span><i>✦</i><span>2 LIVE SESSIONS</span><i>✦</i><span>ONE PRODUCT PHOTO</span><i>✦</i><span>AI POWERED ADS</span><i>✦</i><span>EARLY BIRD ₦6,000</span><i>✦</i><span>2 LIVE SESSIONS</span><i>✦</i></div></div>
       <header class="site-header">
-        <a class="brand" href="#home" aria-label="Back to top"><span class="brand-lockup"><svg class="brand-glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 24V10h7.1c3.4 0 5.6 1.8 5.6 4.7 0 2.9-2.2 4.7-5.6 4.7H10m7-4.7H10m7.1 4.7L23 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26.5" cy="7.5" r="2.5" fill="var(--lime)"/></svg><span class="brand-wordmark"><b>AI PRODUCT</b><em>REVEAL ADS</em></span></span></a>
+        <a class="brand" href="#home" aria-label="Back to top"><span class="legacy-brand-lockup"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-type">PRODUCT<br /><em>REVEAL</em></span></span></a>
         <nav class="main-nav" aria-label="Main navigation"><a href="#masterclass">Programme <span>01</span></a><a href="#workflow">How it works <span>02</span></a><a href="#testimonials">Proof <span>03</span></a><a href="#faqs">FAQ <span>04</span></a></nav>
         <a class="header-cta" href="#register">Secure your seat <span>↗</span></a><button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
       </header>
@@ -940,7 +959,7 @@ a.play-button { text-decoration: none; }
         <section class="faq-section section-pad" id="faqs"><div class="faq-heading"><div class="section-label"><span>08</span><span>GOOD TO KNOW</span></div><h2><span class="title-line">Everything you</span><br /><span class="title-line">need to know.</span></h2></div><div class="static-accordion"><details open><summary><span><i>01</i>Do I need advanced video or design skills?</span></summary><p>No. The process is guided live and designed for beginners and working creatives. You will start with one product image and follow the workflow step by step.</p></details><details><summary><span><i>02</i>What tools will we use?</span></summary><p>We will use ChatGPT for scripts and concepts, Promptor for storyboards, Google Flow for animation and AI Auto Fill for creative ideation. You will also learn why each tool belongs at that point in the process.</p></details><details><summary><span><i>03</i>Who is this training for?</span></summary><p>This is for content creators, marketers, agencies, designers, freelancers, entrepreneurs, ecommerce owners, students and creative professionals who want stronger product content and a more valuable creative offer.</p></details><details><summary><span><i>04</i>How do I secure the early bird price?</span></summary><p>Classes begin September 05 at 8:00 PM WAT. Reserve your place through Paystack. Early bird is ₦6,000 and the regular price is ₦15,000.</p></details><details><summary><span><i>05</i>What happens after I register?</span></summary><p>Submit your details, complete payment through Paystack, then add the class to your calendar. Your registration details are captured for class communication.</p></details><details><summary><span><i>06</i>How is my information used?</span></summary><p>Your details are used only to process registration and send class updates. The form includes a consent step, and Formspree is used to process the registration submission.</p></details></div></section>
       </main>
       <div class="mobile-sticky-cta"><div><span>EARLY BIRD</span><strong>₦6,000</strong></div><a href="#register">Reserve your seat <span>↗</span></a></div>
-      <footer class="site-footer section-pad"><div class="footer-top"><div class="footer-brand"><span class="brand-lockup brand-lockup-footer"><svg class="brand-glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 24V10h7.1c3.4 0 5.6 1.8 5.6 4.7 0 2.9-2.2 4.7-5.6 4.7H10m7-4.7H10m7.1 4.7L23 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26.5" cy="7.5" r="2.5" fill="var(--lime)"/></svg><span class="brand-wordmark"><b>AI PRODUCT</b><em>REVEAL ADS</em></span></span></div><p>From one product photo<br />to a world of possibilities.</p><a class="back-to-top" href="#home">Back to top <span>↗</span></a></div><div class="footer-bottom"><span>AI PRODUCT REVEAL ADS MASTERCLASS</span><span>© 2026 / BUILT FOR THE CURIOUS</span><a href="https://paystack.shop/pay/productreview" target="_blank" rel="noreferrer">paystack.shop/pay/productreview ↗</a></div></footer>
+      <footer class="site-footer section-pad"><div class="footer-top"><div class="footer-brand"><span class="legacy-brand-lockup legacy-brand-lockup-footer"><span class="brand-mark"><span></span><span></span><span></span></span><span class="footer-brand-title">AI PRODUCT<br /><em>REVEAL ADS</em></span></span></div><p>From one product photo<br />to a world of possibilities.</p><a class="back-to-top" href="#home">Back to top <span>↗</span></a></div><div class="footer-bottom"><span>AI PRODUCT REVEAL ADS MASTERCLASS</span><span>© 2026 / BUILT FOR THE CURIOUS</span><a href="https://paystack.shop/pay/productreview" target="_blank" rel="noreferrer">paystack.shop/pay/productreview ↗</a></div></footer>
     </div>
   </div>
   <script>
