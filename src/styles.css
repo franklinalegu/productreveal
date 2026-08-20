@@ -911,3 +911,28 @@ a.play-button { text-decoration: none; }
   .audience-intro h2 { font-size: clamp(44px, 12vw, 60px); line-height: .96; }
   .mobile-title-break { display: inline; }
 }
+
+/* Unified two line title treatment after the hero. */
+.brief-grid h2 .title-line,
+.section-heading-row h2 .title-line,
+.workflow-copy h2 .title-line,
+.audience-intro h2 .title-line,
+.testimonials-heading-row h2 .title-line,
+.benefit-copy h2 .title-line,
+.offer-details h2 .title-line,
+.faq-heading h2 .title-line,
+.session-card h3 .title-line,
+.takeaway-heading h3 .title-line { display: block; white-space: normal !important; }
+@media (max-width: 720px) {
+  .brief-grid h2 .title-line,
+  .section-heading-row h2 .title-line,
+  .workflow-copy h2 .title-line,
+  .audience-intro h2 .title-line,
+  .testimonials-heading-row h2 .title-line,
+  .benefit-copy h2 .title-line,
+  .offer-details h2 .title-line,
+  .faq-heading h2 .title-line,
+  .session-card h3 .title-line,
+  .takeaway-heading h3 .title-line { display: block; }
+  .brief-grid h2, .section-heading-row h2, .workflow-copy h2, .audience-intro h2, .benefit-copy h2, .offer-details h2, .faq-heading h2 { font-size: clamp(42px, 12vw, 62px); }
+}
