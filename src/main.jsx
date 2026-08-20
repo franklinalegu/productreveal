@@ -80,7 +80,9 @@ const EMPTY_REGISTRATION = { name: '', email: '', phone: '', role: '', consent: 
 const getSavedRegistration = () => {
   if (typeof window === 'undefined') return EMPTY_REGISTRATION
   try {
-    return { ...EMPTY_REGISTRATION, ...(JSON.parse(window.localStorage.getItem(REGISTRATION_DRAFT_KEY)) || {}) }
+    const saved = JSON.parse(window.sessionStorage.getItem(REGISTRATION_DRAFT_KEY))
+    if (!saved || (saved.expiresAt && saved.expiresAt < Date.now())) return EMPTY_REGISTRATION
+    return { ...EMPTY_REGISTRATION, ...(saved.data || saved) }
   } catch {
     return EMPTY_REGISTRATION
   }
@@ -150,7 +152,7 @@ function App() {
     const { name, type, checked, value } = event.target
     const next = { ...registrationDraft, [name]: type === 'checkbox' ? checked : value }
     setRegistrationDraft(next)
-    try { window.localStorage.setItem(REGISTRATION_DRAFT_KEY, JSON.stringify(next)) } catch { /* storage is optional */ }
+    try { window.sessionStorage.setItem(REGISTRATION_DRAFT_KEY, JSON.stringify({ data: next, expiresAt: Date.now() + 30 * 60 * 1000 })) } catch { /* storage is optional */ }
   }
 
   const beginRegistration = () => {
@@ -220,6 +222,7 @@ function App() {
 
   const handlePaymentClick = () => {
     trackEvent('checkout_click', { destination: PAYMENT_LINK })
+    try { window.sessionStorage.removeItem(REGISTRATION_DRAFT_KEY) } catch { /* storage is optional */ }
   }
   const handleVideoPlay = () => {
     setVideoOpen(true)
@@ -249,7 +252,7 @@ function App() {
     },
     {
       question: 'How is my information used?',
-      answer: 'Your details are used only to process registration and send class updates. The form includes a consent step, and the registration sheet is controlled by the training team.'
+      answer: 'Your details are used only to process registration and send class updates. The form includes a consent step, and Formspree is used to process the registration submission.'
     }
   ]
 
@@ -288,7 +291,7 @@ function App() {
               <button className="button button-primary" onClick={openRegistration}>Join the masterclass <ArrowUpRight size={18} /></button>
               <button className="text-button" onClick={() => scrollToId('workflow')}>See how it works <ArrowRight size={17} /></button>
             </div>
-            <div className="countdown-card" aria-label="Countdown to class start">
+            <div className="countdown-card" aria-label="Countdown to class start" aria-live="polite">
               <div className="countdown-top"><span>CLASS BEGINS</span><span>{CLASS_DETAILS.display}</span></div>
               {timeLeft.isLive ? (
                 <div className="countdown-live">CLASS IS LIVE</div>

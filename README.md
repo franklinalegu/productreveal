@@ -55,3 +55,7 @@ The landing page displays an early bird price of **₦6,000** and a regular pric
 ## Content before publishing
 
 Replace the testimonial names and quotes with verified participant feedback and confirmed permissions. Confirm the class duration, delivery details and any recording, support or certificate promises before publishing them as included benefits.
+
+## Audit report
+
+See [AUDIT_REPORT.md](AUDIT_REPORT.md) for the build, security, responsive layout and publishing checks.
