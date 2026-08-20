@@ -295,7 +295,7 @@ function App() {
         <section className="brief-section section-pad" id="brief">
           <div className="section-label"><span>01</span><span>THE BRIEF</span></div>
           <div className="brief-grid">
-            <h2><span class="title-line">A product photo</span><br /><span class="title-line">is only the beginning.</span></h2>
+            <h2><span class="title-line">A product photo</span><br /><span class="title-line">is only the</span><br /><span class="title-line">beginning.</span></h2>
             <div className="brief-copy">
               <p className="lead-copy">Your product photo is only the starting point. In this masterclass, you will turn one still image into a cinematic reveal with a clear story, intentional motion and a finish that feels ready for the feed.</p>
               <p>You will learn how to connect ChatGPT, Promptor, Google Flow and AI Auto Fill in sequence. Shape the idea, write the message, map the frames, animate the reveal and export an asset for social, ecommerce, paid campaigns or client work.</p>
