@@ -25,13 +25,13 @@ npm run dev
 
 ## Connect the registration form with Formspree
 
-1. Create a free form at [Formspree](https://formspree.io).
+1. Create a free form at [Formspree](https://formspree.io), or use the already connected form endpoint below.
 2. Add the fields used by the landing page: name, email, phone, role, consent, classStart, timezone, source and pageUrl.
 3. Copy the endpoint that looks like `https://formspree.io/f/your-form-id`.
 4. Add it to `.env.local`:
 
 ```bash
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/xnpalypp
 ```
 
 5. Restart the Vite server after changing `.env.local`.

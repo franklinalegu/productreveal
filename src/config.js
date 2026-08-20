@@ -13,5 +13,5 @@ export const PRICING = {
 }
 
 // Add the Formspree endpoint in .env.local.
-export const FORM_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || ''
+export const FORM_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xnpalypp'
 export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || ''
