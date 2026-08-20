@@ -230,7 +230,7 @@ function App() {
         <section className="hero section-pad" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-dot"></span>AI CREATIVE TRAINING / 001</div>
-            <h1>One photo.<br /><span className="lime-text">Infinite</span><br />possibilities<span className="period">.</span></h1>
+            <h1>Turn one<br /><span className="lime-text">photo</span><br />into a product ad<span className="period">.</span></h1>
             <p className="hero-lede">Learn the exact AI workflow for turning one product photo into a cinematic reveal your audience can feel, remember and buy from.</p>
             <div className="hero-actions">
               <button className="button button-primary" onClick={openRegistration}>Join the masterclass <ArrowUpRight size={18} /></button>
@@ -249,7 +249,7 @@ function App() {
                 </div>
               )}
             </div>
-            <div className="hero-note"><span>One photo. One system. One product ad you can confidently ship.</span></div>
+            <div className="hero-note"><span>From a product image to a cinematic reveal in two live sessions.</span></div>
           </div>
 
           <div className={videoOpen ? 'hero-art is-video-open' : 'hero-art'}>
@@ -285,17 +285,17 @@ function App() {
         </section>
 
         <section className="signal-strip section-pad" aria-label="Masterclass highlights">
-          <div className="signal-intro"><span className="mini-kicker">AT A GLANCE</span><span className="signal-intro-arrow">↘</span></div>
-          <div className="signal-item"><strong>01</strong><span>source<br />image</span></div>
-          <div className="signal-item"><strong>04</strong><span>AI tools<br />in the loop</span></div>
-          <div className="signal-item"><strong>02</strong><span>focused<br />sessions</span></div>
-          <div className="signal-item signal-item--accent"><strong>∞</strong><span>creative<br />directions</span></div>
+          <div className="signal-intro"><span className="mini-kicker">CLASS DETAILS</span><span className="signal-intro-arrow">↘</span></div>
+          <div className="signal-item"><strong>02</strong><span>live<br />sessions</span></div>
+          <div className="signal-item"><strong>04</strong><span>AI tools<br />connected</span></div>
+          <div className="signal-item"><strong>05 SEP</strong><span>class<br />starts</span></div>
+          <div className="signal-item signal-item--accent"><strong>₦6K</strong><span>early bird<br />access</span></div>
         </section>
 
         <section className="brief-section section-pad" id="brief">
           <div className="section-label"><span>01</span><span>THE BRIEF</span></div>
           <div className="brief-grid">
-            <h2>Make the<br /><span>ordinary</span><br />look <em>expensive.</em></h2>
+            <h2>One photo<br /><span>is not</span><br />the whole <em>story.</em></h2>
             <div className="brief-copy">
               <p className="lead-copy">Your product photo is only the starting point. In this masterclass, you will turn one still image into a cinematic reveal with a clear story, intentional motion and a finish that feels ready for the feed.</p>
               <p>You will learn how to connect ChatGPT, Promptor, Google Flow and AI Auto Fill in sequence. Shape the idea, write the message, map the frames, animate the reveal and export an asset for social, ecommerce, paid campaigns or client work.</p>
@@ -313,6 +313,7 @@ function App() {
             </div>
             <p className="heading-aside">You will leave with more than prompts. You will leave with a repeatable way to move from brief to storyboard to finished reveal without losing the idea along the way.</p>
           </div>
+          <div className="program-facts" aria-label="Program details"><div className="program-fact"><strong>02</strong><span>live sessions</span></div><div className="program-fact"><strong>04</strong><span>AI tools in sequence</span></div><div className="program-fact"><strong>05 SEP</strong><span>class start</span></div><div className="program-fact"><strong>8 PM</strong><span>WAT</span></div></div>
           <div className="session-grid">
             <article className="session-card session-card-dark">
               <div className="card-top"><span className="card-number">01</span><span className="card-tag">THINK / WRITE</span></div>
@@ -347,7 +348,7 @@ function App() {
           <div className="section-label"><span>03</span><span>THE WORKFLOW</span></div>
           <div className="workflow-grid">
             <div className="workflow-copy">
-              <h2>A tighter loop from <span>idea</span> to edit.</h2>
+              <h2>From product <span>photo</span> to product reveal.</h2>
               <p>The magic is not one perfect prompt. It is the sequence. Learn a simple creative system you can repeat across products, platforms and client briefs.</p>
               <div className="code-note"><span className="code-dot code-dot--red"></span><span className="code-dot code-dot--yellow"></span><span className="code-dot code-dot--green"></span><code>/product-reveal /v01</code></div>
             </div>
@@ -363,7 +364,7 @@ function App() {
         <section className="audience-section section-pad" id="audience">
           <div className="audience-intro">
             <div className="section-label section-label-dark"><span>04</span><span>WHO IT'S FOR</span></div>
-            <h2>Made for the<br /><em>next</em> kind of<br />creative.</h2>
+            <h2>For creatives<br /><em>ready</em> to work<br />with intention.</h2>
           </div>
           <div className="audience-content">
             <p className="audience-lede">For people who want to turn creative skill into faster output, stronger offers and more valuable product work.</p>
